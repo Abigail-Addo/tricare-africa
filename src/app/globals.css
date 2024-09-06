@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #1DA3DA;
+  --secondary-color: #3EA74D;
+  /* 
+      green
+      0B6D3C
+    3EA74D
+    
+      yellow
+    D9D54C
+    F0E439
+    
+      blue
+    2784C3
+    1DA3DA
+       */
+}
+
+body {
+  position: relative;
+  overflow: hidden;
+}
+
+@layer utilities {}
