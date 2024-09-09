@@ -7,7 +7,17 @@ module.exports = {
     // "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      container: {
+        padding: {
+          DEFAULT: "1rem",
+          sm: "0",
+          //     lg: "3rem",
+          //     xl: "4rem",
+          //     "2xl": "5rem",
+        },
+      },
+    },
   },
   plugins: [],
 };
