@@ -14,6 +14,7 @@ const Footer = () => {
                                 width={40}
                                 height={40}
                                 alt="Tricare Africa Logo"
+                                className="w-auto h-auto"
                             />
                             <h1 className="text-[#2AA7FF] ps-2 text-lg font-bold">Tricare Africa</h1>
                         </div>
@@ -40,7 +41,6 @@ const Footer = () => {
                             <Link href='/'>
                                 <Image
                                     src="/assets/icons/facebook.png"
-                                    objectFit="cover"
                                     alt="Hero image"
                                     className="scale-125"
                                     width={30}
@@ -50,7 +50,6 @@ const Footer = () => {
                             <Link href='/'>
                                 <Image
                                     src="/assets/icons/instagram.png"
-                                    objectFit="cover"
                                     alt="Hero image"
                                     className="scale-125"
                                     width={30}
@@ -60,7 +59,6 @@ const Footer = () => {
                             <Link href='/'>
                                 <Image
                                     src="/assets/icons/linkedin.png"
-                                    objectFit="cover"
                                     alt="Hero image"
                                     className="scale-125"
                                     width={30}
@@ -70,7 +68,6 @@ const Footer = () => {
                             <Link href='/'>
                                 <Image
                                     src="/assets/icons/twitter.png"
-                                    objectFit="cover"
                                     alt="Hero image"
                                     className="scale-125"
                                     width={30}

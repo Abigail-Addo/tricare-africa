@@ -35,7 +35,7 @@ const Navlinks = () => {
                                 <Link href="/providers" className="flex px-4 py-2 text-sm">
                                     Providers
                                 </Link>
-                                <Link href="/users" className="flex px-4 py-2 text-sm">
+                                <Link href="/clients" className="flex px-4 py-2 text-sm">
                                     Clients
                                 </Link>
                             </div>

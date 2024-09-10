@@ -10,39 +10,43 @@ import Footer from "@/components/footer/Footer";
 const LandingPage = () => {
   return (
     <>
-      <Navbar />
+      <Navbar showNavlinks={true}>
+        <Button
+          text="Download App"
+          className="text-sm"
+        />
+      </Navbar>
 
-      <main className="relative z-10">
-        {/* Hero section */}
-        <div className="relative flex flex-col lg:flex-row items-center justify-center bg-gradient-to-r from-[#F6FAFE] to-[#E1EEFF]">
-          {/* text container */}
-          <div className="absolute w-full lg:relative z-20 text-white p-4 lg:w-1/2 flex flex-col items-center justify-center">
-            <h1 className="text-3xl md:text-4xl font-bold mb-4 lg:text-start text-black">
-              Empowering Your Journey To Wellness
-            </h1>
-            <p className="text-lg text-black lg:text-start">
-              Lorem ipsum dolor sit amet consectetur. Vitae viverra quam fermentum erat
-              orci posuere. Sagittis sed pellentesque quis viverra est. Condimentum.
-            </p>
-            <Button
-              text="Learn more"
-              className="text-lg mt-4"
-              onClick={() => alert('Clicked!')}
-            />
-          </div>
-          {/* image container */}
-          <div className="relative w-full lg:w-1/2 h-[500px] md:h-[600px]">
-            <Image
-              src="/assets/hero/hero.png"
-              layout="fill"
-              objectFit="cover"
-              alt="Hero image"
-              className="lg:rounded-lg"
-            />
-            {/* Overlay (only on small and medium screens) */}
-            <div className="absolute inset-0 bg-[#E1EEFF] opacity-50 z-10 lg:hidden"></div>
-          </div>
+      {/* Hero section */}
+      <div className="relative flex flex-col lg:flex-row items-center justify-center bg-gradient-to-r from-[#F6FAFE] to-[#E1EEFF]">
+        {/* text container */}
+        <div className="absolute w-full lg:relative z-20 text-white p-4 lg:w-1/2 flex flex-col items-center justify-center">
+          <h1 className="text-3xl md:text-4xl font-bold mb-4 lg:text-start text-black">
+            Empowering Your Journey To Wellness
+          </h1>
+          <p className="text-lg text-black lg:text-start">
+            Lorem ipsum dolor sit amet consectetur. Vitae viverra quam fermentum erat
+            orci posuere. Sagittis sed pellentesque quis viverra est. Condimentum.
+          </p>
+          <Button
+            text="Learn more"
+            className="text-lg mt-4"
+          />
         </div>
+        {/* image container */}
+        <div className="relative w-full lg:w-1/2 h-[500px] md:h-[800px] lg:h-[650px]">
+          <Image
+            src="/assets/hero/hero.png"
+            alt="Hero image"
+            className="absolute inset-0 w-full h-full object-cover z-0"
+            width={1000}
+            height={1000}
+          />
+          {/* Overlay (only on small and medium screens) */}
+          <div className="absolute inset-0 bg-[#E1EEFF] opacity-50 z-10 lg:hidden"></div>
+        </div>
+      </div>
+      <main className="relative z-10">
 
         {/* Short story section */}
         <div className="bg-[#F6FAFF]">
@@ -87,7 +91,7 @@ const LandingPage = () => {
                   alt="image_19"
                   width={300}
                   height={1000}
-                  className="z-10 lg:translate-y-8 lg:-translate-x-6 2xl:-translate-x-16 shadow-2xl"
+                  className="z-10 lg:translate-y-8 lg:-translate-x-6 2xl:-translate-x-16 shadow-2xl w-auto h-auto"
                 />
               </div>
 
@@ -97,7 +101,7 @@ const LandingPage = () => {
                   alt="image_20"
                   width={300}
                   height={1000}
-                  className="lg:-translate-y-8 lg:translate-x-6 2xl:translate-x-16 shadow-2xl"
+                  className="lg:-translate-y-8 lg:translate-x-6 2xl:translate-x-16 shadow-2xl w-auto h-auto"
                 />
               </div>
 
@@ -125,11 +129,12 @@ const LandingPage = () => {
           </div>
         </div>
 
+        {/* Team section */}
         <div className="bg-[#F6FAFF]">
-          {/* Team section */}
           <div className="grid grid-cols-1 container mx-auto py-20  bg-[#F6FAFF]">
             <h4 className="text-[#2AA7FF] pb-6 text-xl lg:text-2xl text-center">Our Team</h4>
             <div className="flex overflow-x-auto scrollbar-hidden gap-8 pt-8">
+
               <div className="flex-shrink-0 w-2/4 lg:w-1/4 p-0">
                 <Image
                   src='/assets/home/team_1.png'
@@ -217,8 +222,9 @@ const LandingPage = () => {
           <div className="relative w-full h-[650px] md:h-[600px]">
             <Image
               src="/assets/faq_image.png"
-              layout="fill"
-              objectFit="cover"
+              className="absolute inset-0 w-full h-full object-cover z-0"
+              width={1000}
+              height={1000}
               alt="faq image"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-[#00DBE7] to-[#00ECBA] opacity-50 z-10"></div>
@@ -230,7 +236,6 @@ const LandingPage = () => {
               <div className="w-full h-full hidden lg:flex ">
                 <Image
                   src="/assets/faq_image_1.png"
-                  objectFit="cover"
                   alt="Hero image"
                   className="h-full w-3/4 mx-left"
                   width={1000}
@@ -252,7 +257,6 @@ const LandingPage = () => {
               <div className="w-3/4 overflow-hidden cursor-pointer shadow-lg mx-auto">
                 <Image
                   src="/assets/home/blog.png"
-                  objectFit="cover"
                   alt="Hero image"
                   className=" mx-left"
                   width={1000}
@@ -268,7 +272,6 @@ const LandingPage = () => {
               <div className="w-3/4 overflow-hidden cursor-pointer shadow-lg mx-auto">
                 <Image
                   src="/assets/blog.png"
-                  objectFit="cover"
                   alt="Hero image"
                   className=" mx-left"
                   width={1000}
@@ -284,7 +287,6 @@ const LandingPage = () => {
               <div className="w-3/4 overflow-hidden cursor-pointer shadow-lg mx-auto">
                 <Image
                   src="/assets/blog.png"
-                  objectFit="cover"
                   alt="Hero image"
                   className=" mx-left"
                   width={1000}
@@ -323,7 +325,6 @@ const LandingPage = () => {
               <div className="flex items-center justify-center translate-y-16 md:translate-y-40 2xl:translate-y-40 lg:translate-y-28">
                 <Image
                   src="/assets/home/mobile.png"
-                  objectFit="cover"
                   alt="Hero image"
                   className="scale-125"
                   width={1000}

@@ -5,14 +5,12 @@ import Image from 'next/image';
 interface ButtonProps {
     text: string;
     className?: string;
-    onClick?: () => void;
     image?: string;
 }
 
-const Button: React.FC<ButtonProps> = ({ text, onClick, className, image }) => {
+const Button: React.FC<ButtonProps> = ({ text, className, image }) => {
     return (
         <button
-            onClick={onClick}
             className={`bg-green-600 text-white px-5 py-2 rounded hover:bg-green-800 focus:bg-green-800 flex items-center ${className}`}
         >
             {image && (

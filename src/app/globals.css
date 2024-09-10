@@ -5,23 +5,11 @@
 :root {
   --primary-color: #1DA3DA;
   --secondary-color: #3EA74D;
-  /* 
-      green
-      0B6D3C
-    3EA74D
-    
-      yellow
-    D9D54C
-    F0E439
-    
-      blue
-    2784C3
-    1DA3DA
-       */
 }
 
 body {
-  position: relative;
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -31,9 +19,7 @@ body {
 
 .scrollbar-hidden {
   -ms-overflow-style: none;
-  /* IE and Edge */
   scrollbar-width: none;
-  /* Firefox */
 }
 
 

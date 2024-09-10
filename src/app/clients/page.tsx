@@ -11,10 +11,10 @@ import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import CloseIcon from '@mui/icons-material/Close';
 
 export const metadata: Metadata = {
-    title: 'Health Providers'
+    title: 'Clients'
 }
 
-const Providers = () => {
+const Users = () => {
 
     return (
         <>
@@ -26,9 +26,9 @@ const Providers = () => {
             </Navbar>
 
             <main>
-                <div className="bg-[#6FC276] h-3/4 w-full text-white py-20">
+                <div className="bg-[#2AA7FF] h-3/4 w-full text-white py-20">
                     <div className="container mx-auto">
-                        <h1 className="text-bold text-lg lg:text-2xl">Health Providers</h1>
+                        <h1 className="text-bold text-lg lg:text-2xl">Clients</h1>
                         <Breadcrumbs aria-label="breadcrumb" className="text-white">
                             <Link
                                 href="/"
@@ -40,7 +40,7 @@ const Providers = () => {
                                 href="/clients"
                                 className="underline text-gray-200 pointer-events-none"
                             >
-                                Health Providers
+                                Client
                             </Link>
                         </Breadcrumbs>
                     </div>
@@ -269,4 +269,4 @@ const Providers = () => {
     )
 }
 
-export default Providers
+export default Users

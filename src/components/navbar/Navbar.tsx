@@ -1,11 +1,17 @@
-"use client"
+'use client'
 
-import Image from "next/image"
-import DrawerNavbar from "./DrawerNavbar"
-import Navlinks from "./Navlinks"
-import Button from "../button/Button"
 
-const Navbar = () => {
+import React, { ReactNode } from 'react';
+import Image from "next/image";
+import DrawerNavbar from "./DrawerNavbar";
+import Navlinks from './Navlinks';
+
+interface HeaderProps {
+    children: ReactNode;
+    showNavlinks?: boolean; // Optional prop to control the visibility of Navlinks
+}
+
+const Navbar: React.FC<HeaderProps> = ({ children, showNavlinks = true }) => {
     return (
         <>
             <header className="h-20 bg-white sticky top-0 z-40 shadow-lg">
@@ -17,19 +23,20 @@ const Navbar = () => {
                                 width={40}
                                 height={40}
                                 alt="Tricare Africa Logo"
+                                className="h-auto w-auto"
                             />
                             <h1 className="text-[#2AA7FF] ps-2 text-lg font-bold">Tricare Africa</h1>
                         </div>
-                        <div className="hidden lg:flex justify-center items-center space-x-12">
-                            <Navlinks />
-                        </div>
+
+
+                        {showNavlinks && (
+                            <div className="hidden lg:flex justify-center items-center space-x-12">
+                                <Navlinks />
+                            </div>
+                        )}
 
                         <div className="hidden lg:flex">
-                            <Button
-                                text="Download App"
-                                className="text-sm"
-                                onClick={() => alert('Clicked!')}
-                            />
+                            {children}
                         </div>
 
                         <div className="lg:hidden">
@@ -37,10 +44,9 @@ const Navbar = () => {
                         </div>
                     </div>
                 </div>
-
-            </header >
+            </header>
         </>
-    )
+    );
 }
 
-export default Navbar
+export default Navbar;
