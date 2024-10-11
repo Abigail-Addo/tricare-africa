@@ -8,7 +8,7 @@ import Navlinks from './Navlinks';
 
 interface HeaderProps {
     children: ReactNode;
-    showNavlinks?: boolean; // Optional prop to control the visibility of Navlinks
+    showNavlinks?: boolean;
 }
 
 const Navbar: React.FC<HeaderProps> = ({ children, showNavlinks = true }) => {

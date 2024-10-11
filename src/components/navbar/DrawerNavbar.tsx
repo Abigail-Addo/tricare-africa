@@ -5,6 +5,7 @@ import Button from '@mui/material/Button';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import Navlinks from './Navlinks';
+import Box from '@mui/material/Box';
 
 const DrawerNavbar = () => {
     const [open, setOpen] = React.useState(false);
@@ -14,7 +15,7 @@ const DrawerNavbar = () => {
     };
 
     return (
-        <div>
+        <>
             <Button
                 onClick={toggleDrawer(true)}
                 className='flex justify-end p-0'
@@ -26,15 +27,31 @@ const DrawerNavbar = () => {
             <Drawer
                 open={open}
                 anchor='right'
+                ModalProps={{
+                    keepMounted: true,
+                }}
+                sx={{
+                    '& .MuiDrawer-paper': {
+                        boxSizing: 'border-box',
+                        width: '50%',
+                        overflowX: 'hidden',
+                    },
+                }}
+
             >
                 <div className='bg-white w-screen'>
-                    <CloseIcon
-                        onClick={toggleDrawer(false)}
-                    />
-                    <h2>Drawer</h2>
+                    <div className='border-b border-gray-950 py-8'>
+                        <CloseIcon
+                            onClick={toggleDrawer(false)}
+                            className='ml-2'
+                        />
+                    </div>
+                    <div className='flex flex-col items-start gap-12 pt-8 pb-12'>
+                        <Navlinks />
+                    </div>
                 </div>
             </Drawer>
-        </div>
+        </>
     );
 }
 
