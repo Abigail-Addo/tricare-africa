@@ -77,8 +77,9 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-
-                <p className="text-sm text-center">© All rights reserved to Tricare Africa 2024</p>
+                <Link href="https://github.com/Abigail-Addo/tricare-africa">
+                    <p className="text-sm text-center">View source code</p>
+                </Link>
             </footer>
         </>
     )
