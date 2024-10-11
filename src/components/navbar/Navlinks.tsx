@@ -28,9 +28,10 @@ const Navlinks = () => {
                                     },
                                 )}
                             >
+
                                 <p>{link.name}</p>
                             </Link>
-                            <div className="absolute hidden group-hover:block text-sm">
+                            <div className="absolute hidden group-hover:block text-sm bg-white border border-gray-950">
                                 <Link href="/providers" className="flex px-4 py-2 text-sm">
                                     Providers
                                 </Link>
