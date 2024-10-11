@@ -6,8 +6,12 @@ import Button from "@/components/button/Button";
 import VerifiedIcon from '@mui/icons-material/Verified';
 import AccordionSection from "@/components/accordion/Accordion";
 import Footer from "@/components/footer/Footer";
+import { motion } from "framer-motion"
+import FramerImage from "@/components/framer-image/FramerImage";
+import React from "react";
 
 const LandingPage = () => {
+  const scrollRef = React.useRef(null)
   return (
     <>
       <Navbar showNavlinks={true}>
@@ -49,66 +53,80 @@ const LandingPage = () => {
       <main className="relative z-10">
 
         {/* Short story section */}
-        <div className="bg-[#F6FAFF]">
-          <div className="grid grid-cols-1 lg:grid-cols-2 container mx-auto py-20 gap-8  bg-[#F6FAFF]">
-            {/* image container */}
-            <div className="lg:w-3/4 lg:mx-auto">
-              <Image
-                src='/assets/home/video.png'
-                alt="video"
-                width={1000}
-                height={100}
-              />
+        <div className="bg-[#F6FAFF]" ref={scrollRef}>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ root: scrollRef }}
+            transition={{
+              delay: 0.5,
+              ease: [0, 0.71, 0.2, 1.01],
+              duration: 2,
+              type: "tween"
+            }}
+          >
+            <div className="grid grid-cols-1 lg:grid-cols-2 container mx-auto py-20 gap-8  bg-[#F6FAFF]">
+              {/* image container */}
+              <div className="lg:w-3/4 lg:mx-auto">
+                <Image
+                  src='/assets/home/video.png'
+                  alt="video"
+                  width={1000}
+                  height={100}
+                />
+              </div>
+              {/* text container */}
+              <div className="flex flex-col justify-center">
+                <h4 className="text-[#2AA7FF] pb-6 text-xl lg:text-2xl text-center lg:text-start">Short Story About Tricare Africa</h4>
+                <p className="text-md lg:text-lg text-center lg:text-start">
+                  Lorem ipsum dolor sit amet consectetur. Vitae v
+                  iverra quam fermentum erat orci posuere. Sagittis sed
+                  pellentesque quis viverra est. Condimentum.</p>
+                <p className="text-md lg:text-lg text-center lg:text-start">
+                  Lorem ipsum dolor sit amet consectetur. Vitae v
+                  iverra quam fermentum erat orci posuere. Sagittis sed
+                  pellentesque quis viverra est. Condimentum.</p>
+                <p className="text-md lg:text-lg text-center lg:text-start">
+                  Lorem ipsum dolor sit amet consectetur. Vitae v
+                  iverra quam fermentum erat orci posuere. Sagittis sed
+                  pellentesque quis viverra est. Condimentum.</p>
+              </div>
             </div>
-            {/* text container */}
-            <div className="flex flex-col justify-center">
-              <h4 className="text-[#2AA7FF] pb-6 text-xl lg:text-2xl text-center lg:text-start">Short Story About Tricare Africa</h4>
-              <p className="text-md lg:text-lg text-center lg:text-start">
-                Lorem ipsum dolor sit amet consectetur. Vitae v
-                iverra quam fermentum erat orci posuere. Sagittis sed
-                pellentesque quis viverra est. Condimentum.</p>
-              <p className="text-md lg:text-lg text-center lg:text-start">
-                Lorem ipsum dolor sit amet consectetur. Vitae v
-                iverra quam fermentum erat orci posuere. Sagittis sed
-                pellentesque quis viverra est. Condimentum.</p>
-              <p className="text-md lg:text-lg text-center lg:text-start">
-                Lorem ipsum dolor sit amet consectetur. Vitae v
-                iverra quam fermentum erat orci posuere. Sagittis sed
-                pellentesque quis viverra est. Condimentum.</p>
-            </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* Benefits section */}
-        <div className="bg-gradient-to-r from-[#E7F0FF] to-[#E8F1FF]">
+        <div className="bg-gradient-to-r from-[#E7F0FF] to-[#E8F1FF] lg:py-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 container mx-auto gap-8">
             {/* Image container */}
-            <div className="grid grid-cols-2 gap-8 lg:gap-0 lg:grid-cols-1 relative lg:w-3/4 lg:mx-auto ">
-
-              <div className=" ml-auto">
-                <Image
-                  src='/assets/home/image_19.png'
-                  alt="image_19"
-                  width={300}
-                  height={1000}
-                  className="z-10 lg:translate-y-8 lg:-translate-x-6 2xl:-translate-x-16 shadow-2xl w-auto h-auto"
-                />
-              </div>
-
-              <div className=" mr-auto">
-                <Image
-                  src='/assets/home/image_20.png'
-                  alt="image_20"
-                  width={300}
-                  height={1000}
-                  className="lg:-translate-y-8 lg:translate-x-6 2xl:translate-x-16 shadow-2xl w-auto h-auto"
-                />
-              </div>
-
+            <div className="grid grid-cols-2 gap-8 lg:gap-0 lg:grid-cols-1 relative lg:w-3/4 lg:mx-auto">
+              <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
+                <div className="w-full h-full ml-auto lg:translate-y-8 lg:-translate-x-16 2xl:-translate-x-3/4 ">
+                  <FramerImage
+                    src='/assets/home/image_19.png'
+                    alt="image"
+                    width={1000}
+                    height={100}
+                    className=" w-full h-full shadow-2xl"
+                  />
+                </div>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
+                <div className="w-full h-full mr-auto z-10 lg:-translate-y-8 lg:translate-x-16 2xl:translate-x-16">
+                  <FramerImage
+                    src='/assets/home/image_20.png'
+                    alt="image"
+                    width={1000}
+                    height={100}
+                    className=" w-full h-full shadow-2xl"
+                  />
+                </div>
+              </motion.div>
             </div>
 
             {/* Text container */}
-            <div className="flex flex-col justify-center mx-auto gap-4  ">
+            <div className="flex flex-col justify-center mx-auto gap-4">
               <h4 className="text-[#2AA7FF] text-xl lg:text-2xl text-center lg:text-start  ">
                 Helping pregnant women from Africa and beyond
               </h4>
@@ -130,11 +148,10 @@ const LandingPage = () => {
         </div>
 
         {/* Team section */}
-        <div className="bg-[#F6FAFF]">
+        <div className="bg-[#F6FAFF]" >
           <div className="grid grid-cols-1 container mx-auto py-20  bg-[#F6FAFF]">
             <h4 className="text-[#2AA7FF] pb-6 text-xl lg:text-2xl text-center">Our Team</h4>
             <div className="flex overflow-x-auto scrollbar-hidden gap-8 pt-8">
-
               <div className="flex-shrink-0 w-2/4 lg:w-1/4 p-0">
                 <Image
                   src='/assets/home/team_1.png'
@@ -214,6 +231,7 @@ const LandingPage = () => {
               </div>
             </div>
           </div>
+
         </div>
 
         {/* faq */}
@@ -271,7 +289,7 @@ const LandingPage = () => {
               </div>
               <div className="w-3/4 overflow-hidden cursor-pointer shadow-lg mx-auto">
                 <Image
-                  src="/assets/blog.png"
+                  src="/assets/home/blog.png"
                   alt="Hero image"
                   className=" mx-left"
                   width={1000}
@@ -286,7 +304,7 @@ const LandingPage = () => {
               </div>
               <div className="w-3/4 overflow-hidden cursor-pointer shadow-lg mx-auto">
                 <Image
-                  src="/assets/blog.png"
+                  src="/assets/home/blog.png"
                   alt="Hero image"
                   className=" mx-left"
                   width={1000}

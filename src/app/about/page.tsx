@@ -1,18 +1,22 @@
+
 import Navbar from "@/components/navbar/Navbar"
 import { Metadata } from "next"
 import Image from "next/image";
 import Footer from "@/components/footer/Footer";
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import Testimonials from "@/components/testimonials/Testimonials";
-import Navlinks from "@/components/navbar/Navlinks";
 import Button from "@/components/button/Button";
+import React from "react";
+import FramerImage from "@/components/framer-image/FramerImage";
+
 
 export const metadata: Metadata = {
     title: 'About'
 }
 
+
+
 const About = () => {
+
     return (
         <>
             <Navbar showNavlinks={true}>
@@ -23,7 +27,7 @@ const About = () => {
             </Navbar>
 
             {/* Hero */}
-            <div className="relative w-full h-3/4 flex items-center justify-center overflow-hidden">
+            <div className="relative w-full h-4/5 flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0">
                     <Image
                         src='/assets/hero/hero_2.png'
@@ -43,14 +47,16 @@ const About = () => {
                 <div className="bg-[#F6FAFF] pt-20">
                     <div className="grid grid-cols-1 lg:grid-cols-2 container mx-auto bg-[#F6FAFF] pb-8 lg-pb-0 gap-8 lg-gap-0">
                         {/* image container */}
+
                         <div className="lg:w-3/4 lg:mr-auto">
-                            <Image
-                                src='/assets/about/image_22.png'
+                            <FramerImage
+                                src="/assets/about/image_22.png"
                                 alt="image"
                                 width={1000}
                                 height={100}
                             />
                         </div>
+
                         {/* text container */}
                         <div className="flex flex-col justify-center">
                             <h4 className="text-[#2AA7FF] pb-6 text-xl lg:text-2xl text-center lg:text-start">Our Vision</h4>
@@ -75,7 +81,7 @@ const About = () => {
                         </div>
                         {/* image container */}
                         <div className="lg:w-3/4 lg:ml-auto">
-                            <Image
+                            <FramerImage
                                 src='/assets/about/image_23.png'
                                 alt="image"
                                 width={1000}

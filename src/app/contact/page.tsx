@@ -1,10 +1,13 @@
+
+
+
 import Navbar from "@/components/navbar/Navbar"
 import { Metadata } from "next"
 import Image from "next/image";
 import Footer from "@/components/footer/Footer";
 import Form from "@/components/form/Form";
-import Navlinks from "@/components/navbar/Navlinks";
 import Button from "@/components/button/Button";
+import React from "react";
 
 
 export const metadata: Metadata = {
@@ -12,7 +15,6 @@ export const metadata: Metadata = {
 }
 
 const Contact = () => {
-
 
     return (
         <>
