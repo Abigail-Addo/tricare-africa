@@ -24,7 +24,7 @@ const Navlinks = () => {
                 <Link
                     href='/'
                     className={clsx({
-                        'text-green-600': pathname === '/',
+                        'text-dark text-green-600': pathname === '/',
                     })}
                 >
 
@@ -35,7 +35,7 @@ const Navlinks = () => {
                 <Link
                     href='/about'
                     className={clsx({
-                        'text-green-600': pathname === '/about',
+                        'text-dark text-green-600': pathname === '/about',
                     })}
                 >
 
@@ -72,7 +72,7 @@ const Navlinks = () => {
                 <Link
                     href='/contact'
                     className={clsx({
-                        'text-green-600': pathname === '/contact',
+                        'text-dark text-green-600': pathname === '/contact',
                     })}
                 >
 
